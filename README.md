@@ -6,7 +6,7 @@
 
 **Technologies :** Python · FastAPI · requests · BeautifulSoup · SQLite · APScheduler · Ollama (LLM) · React · Vite
 
-**Auteurs :** Votre Nom, Nom du binôme
+**Auteur :** Farahe El-Montaser
 
 ## Le pipeline
 
