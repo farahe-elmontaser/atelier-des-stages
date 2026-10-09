@@ -1,0 +1,245 @@
+[
+  {
+    "titre": "Stage Data Analyst",
+    "entreprise": "Atlas Analytics",
+    "ville": "Casablanca",
+    "description": "Analyse des données de ventes avec Python, SQL et Power BI. Création de tableaux de bord pour l'équipe commerciale. Durée 4 mois, gratification.",
+    "lien": "https://example.com/offres/1",
+    "source": "Démo · France Travail",
+    "date": "2026-10-01"
+  },
+  {
+    "titre": "Stagiaire Développeur Web React",
+    "entreprise": "Nova Digital",
+    "ville": "Rabat",
+    "description": "Développement d'interfaces web en React et TypeScript, intégration d'API REST. Stage PFE de 6 mois.",
+    "lien": "https://example.com/offres/2",
+    "source": "Démo · Adzuna (fr)",
+    "date": "2026-10-02"
+  },
+  {
+    "titre": "Stage Deep Learning – Vision par ordinateur",
+    "entreprise": "Cedar Robotics",
+    "ville": "Montréal, QC",
+    "description": "Entraînement de modèles PyTorch pour la détection d'objets sur des images industrielles. Stage de 4 mois.",
+    "lien": "https://example.com/offres/3",
+    "source": "Démo · Job Bank",
+    "date": "2026-10-03"
+  },
+  {
+    "titre": "Stage  Data analyst",
+    "entreprise": "Atlas Analytics",
+    "ville": "Casablanca",
+    "description": "Analyse des données de ventes avec Python, SQL et Power BI. Création de tableaux de bord pour l'équipe commerciale. Durée 4 mois, gratification.",
+    "lien": "https://example.com/offres/1-bis",
+    "source": "Démo · Adzuna (fr)",
+    "date": "2026-10-01"
+  },
+  {
+    "titre": "Stage Marketing Digital",
+    "entreprise": "Maison Lumière",
+    "ville": "Paris",
+    "description": "Gestion des réseaux sociaux, SEO et campagnes d'e-mailing. Stage de 6 mois, gratification légale.",
+    "lien": "https://example.com/offres/4",
+    "source": "Démo · Adzuna (ca)",
+    "date": "2026-10-04"
+  },
+  {
+    "titre": "Stagiaire Cybersécurité SOC",
+    "entreprise": "Bastion Sécurité",
+    "ville": "Lyon",
+    "description": "Surveillance des alertes de sécurité, analyse des journaux, participation aux tests d'intrusion.",
+    "lien": "https://example.com/offres/5",
+    "source": "Démo · France Travail",
+    "date": "2026-10-05"
+  },
+  {
+    "titre": "Stage Data Engineer",
+    "entreprise": "Flux Data",
+    "ville": "Toronto, ON",
+    "description": "Construction de pipelines ETL avec Spark et Airflow, entrepôt de données sur le cloud.",
+    "lien": "https://example.com/offres/6",
+    "source": "Démo · Adzuna (fr)",
+    "date": "2026-10-06"
+  },
+  {
+    "titre": "Stage Développeur Mobile Flutter",
+    "entreprise": "Souk App",
+    "ville": "Marrakech",
+    "description": "Développement d'une application mobile Flutter pour Android et iOS. Stage de 3 mois.",
+    "lien": "https://example.com/offres/7",
+    "source": "Démo · Job Bank",
+    "date": "2026-10-07"
+  },
+  {
+    "titre": "Stage Contrôle de Gestion",
+    "entreprise": "Groupe Méridien",
+    "ville": "Casablanca",
+    "description": "Suivi budgétaire, reporting mensuel, analyse des écarts. Maîtrise d'Excel exigée.",
+    "lien": "https://example.com/offres/8",
+    "source": "Démo · Adzuna (ca)",
+    "date": "2026-10-08"
+  },
+  {
+    "titre": "Stage Intelligence Artificielle – LLM",
+    "entreprise": "Orion Labs",
+    "ville": "Paris",
+    "description": "Conception d'un assistant basé sur des LLM, RAG et évaluation de modèles. Python obligatoire.",
+    "lien": "https://example.com/offres/9",
+    "source": "Démo · France Travail",
+    "date": "2026-10-09"
+  },
+  {
+    "titre": "Stagiaire Business Intelligence",
+    "entreprise": "Kasbah Retail",
+    "ville": "Tanger",
+    "description": "Modélisation de données et tableaux de bord Power BI pour la direction. Stage de 4 mois.",
+    "lien": "https://example.com/offres/10",
+    "source": "Démo · Adzuna (fr)",
+    "date": "2026-10-01"
+  },
+  {
+    "titre": "Stage Cloud / DevOps",
+    "entreprise": "Nuage Tech",
+    "ville": "Lille",
+    "description": "Automatisation CI/CD, conteneurs Docker et Kubernetes sur Azure.",
+    "lien": "https://example.com/offres/11",
+    "source": "Démo · Job Bank",
+    "date": "2026-10-02"
+  },
+  {
+    "titre": "Stage Ressources Humaines – Recrutement",
+    "entreprise": "Talentia Conseil",
+    "ville": "Rabat",
+    "description": "Sourcing de candidats, organisation des entretiens et suivi de l'onboarding.",
+    "lien": "https://example.com/offres/12",
+    "source": "Démo · Adzuna (ca)",
+    "date": "2026-10-03"
+  },
+  {
+    "titre": "Stage Génie Industriel – Lean",
+    "entreprise": "Atlas Motors",
+    "ville": "Kénitra",
+    "description": "Amélioration continue sur une ligne de production automobile, méthodes Lean et 5S.",
+    "lien": "https://example.com/offres/13",
+    "source": "Démo · France Travail",
+    "date": "2026-10-04"
+  },
+  {
+    "titre": "Stage Machine Learning – Prévision",
+    "entreprise": "Boréal Énergie",
+    "ville": "Québec, QC",
+    "description": "Modèles de prévision de la consommation électrique avec scikit-learn et séries temporelles.",
+    "lien": "https://example.com/offres/14",
+    "source": "Démo · Adzuna (fr)",
+    "date": "2026-10-05"
+  },
+  {
+    "titre": "Stagiaire Développeur Backend Python",
+    "entreprise": "Pixel Forge",
+    "ville": "Bordeaux",
+    "description": "Développement d'API avec FastAPI et PostgreSQL, tests automatisés.",
+    "lien": "https://example.com/offres/15",
+    "source": "Démo · Job Bank",
+    "date": "2026-10-06"
+  },
+  {
+    "titre": "Stage Réseaux & Télécoms",
+    "entreprise": "Maroc Connect",
+    "ville": "Casablanca",
+    "description": "Configuration d'équipements Cisco, supervision du réseau, documentation technique.",
+    "lien": "https://example.com/offres/16",
+    "source": "Démo · Adzuna (ca)",
+    "date": "2026-10-07"
+  },
+  {
+    "titre": "Stage Commercial B2B",
+    "entreprise": "Sahara Solutions",
+    "ville": "Agadir",
+    "description": "Prospection de clients professionnels, préparation d'offres commerciales, suivi CRM.",
+    "lien": "https://example.com/offres/17",
+    "source": "Démo · France Travail",
+    "date": "2026-10-08"
+  },
+  {
+    "titre": "Stage Data Analyst – Marketing",
+    "entreprise": "Lumen Media",
+    "ville": "Montréal, QC",
+    "description": "Analyse du comportement des clients, segmentation et tests A/B avec SQL et Python.",
+    "lien": "https://example.com/offres/18",
+    "source": "Démo · Adzuna (fr)",
+    "date": "2026-10-09"
+  },
+  {
+    "titre": "Stage Électronique Embarquée",
+    "entreprise": "Volta Systems",
+    "ville": "Grenoble",
+    "description": "Programmation de microcontrôleurs en C, tests de cartes électroniques.",
+    "lien": "https://example.com/offres/19",
+    "source": "Démo · Job Bank",
+    "date": "2026-10-01"
+  },
+  {
+    "titre": "Stage Finance – Audit",
+    "entreprise": "Cabinet Andalous",
+    "ville": "Fès",
+    "description": "Participation aux missions d'audit financier, revue des états financiers.",
+    "lien": "https://example.com/offres/20",
+    "source": "Démo · Adzuna (ca)",
+    "date": "2026-10-02"
+  },
+  {
+    "titre": "Stage Développeur Full Stack",
+    "entreprise": "Médina Labs",
+    "ville": "Rabat",
+    "description": "Application web full stack avec React et Node.js, base de données MongoDB.",
+    "lien": "https://example.com/offres/21",
+    "source": "Démo · France Travail",
+    "date": "2026-10-03"
+  },
+  {
+    "titre": "Stage NLP – Traitement du langage",
+    "entreprise": "Arganier AI",
+    "ville": "Casablanca",
+    "description": "Classification de textes en arabe et en français avec des modèles Transformers.",
+    "lien": "https://example.com/offres/22",
+    "source": "Démo · Adzuna (fr)",
+    "date": "2026-10-04"
+  },
+  {
+    "titre": "Stage Génie Civil – Suivi de chantier",
+    "entreprise": "BTP Horizon",
+    "ville": "Marrakech",
+    "description": "Suivi des travaux, métrés et coordination avec les sous-traitants sur un chantier de bâtiment.",
+    "lien": "https://example.com/offres/23",
+    "source": "Démo · Job Bank",
+    "date": "2026-10-05"
+  },
+  {
+    "titre": "Stage Communication Événementielle",
+    "entreprise": "Studio Safran",
+    "ville": "Paris",
+    "description": "Organisation d'événements, rédaction de contenus et relations presse.",
+    "lien": "https://example.com/offres/24",
+    "source": "Démo · Adzuna (ca)",
+    "date": "2026-10-06"
+  },
+  {
+    "titre": "Stage Data Engineer – Big Data",
+    "entreprise": "Océan Logistique",
+    "ville": "Tanger",
+    "description": "Mise en place d'un data lake et d'un pipeline de données pour la supply chain.",
+    "lien": "https://example.com/offres/25",
+    "source": "Démo · France Travail",
+    "date": "2026-10-07"
+  },
+  {
+    "titre": "Stage Mécanique – Conception CAO",
+    "entreprise": "Aéro Atlas",
+    "ville": "Casablanca",
+    "description": "Conception de pièces sous CATIA et SolidWorks pour l'aéronautique.",
+    "lien": "https://example.com/offres/26",
+    "source": "Démo · Adzuna (fr)",
+    "date": "2026-10-08"
+  }
+]

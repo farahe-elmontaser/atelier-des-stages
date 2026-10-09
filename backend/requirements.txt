@@ -1,0 +1,7 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+apscheduler>=3.10,<4
+requests>=2.31
+pandas>=2.0
+python-dotenv>=1.0
+beautifulsoup4>=4.12
