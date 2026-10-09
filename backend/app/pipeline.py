@@ -69,12 +69,11 @@ def verifier_offres():
                 INSERT INTO offres (empreinte, lien, titre, entreprise, ville, description, source,
                                     categorie, competences, resume, date_publication, active)
                 VALUES (?,?,?,?,?,?,?,?,?,?,?,1)
-                ON CONFLICT(empreinte) DO UPDATE SET active = 1, lien = excluded.lien
+                ON CONFLICT(empreinte) DO UPDATE SET active = 1, lien = excluded.lien, source = excluded.source
             """, (cle, o.lien, o.titre, o.entreprise, o.ville, o.description, o.source,
-                                    infos["categorie"], json.dumps(infos["competences"], ensure_ascii=False),
+                  infos["categorie"], json.dumps(infos["competences"], ensure_ascii=False),
                   infos["resume"], o.date_publication))
             db.commit()          # chaque offre apparait sur le site des qu'elle est classee
-            
 
         for cle in supprimees:
             db.execute("UPDATE offres SET active = 0 WHERE empreinte = ?", (cle,))
@@ -112,7 +111,7 @@ def notifier_abonnes(db, utilisateur_id=None):
         """, (*categories, u["id"])).fetchall()
         if not offres:
             continue
-        if envoyer_email(u["email"], u["nom"], [dict(o) for o in offres]):
+        if envoyer_email(u["email"], u["nom"], [dict(o) for o in offres], u["token"]):
             db.executemany("INSERT OR IGNORE INTO envois (utilisateur_id, offre_id) VALUES (?, ?)",
                            [(u["id"], o["id"]) for o in offres])
             db.commit()

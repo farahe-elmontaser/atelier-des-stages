@@ -1,0 +1,19 @@
+# Service systemd : lance le backend au demarrage du serveur et le relance s'il plante.
+# Installe par install.sh dans /etc/systemd/system/atelier-backend.service
+[Unit]
+Description=L'Atelier des Stages - backend FastAPI
+After=network.target ollama.service
+
+[Service]
+User=__UTILISATEUR__
+WorkingDirectory=__DOSSIER__/backend
+# Le fichier .env est lu par l application elle-meme (python-dotenv)
+# 1 seul worker (le scheduler ne doit tourner qu'une fois)
+# --host 127.0.0.1 : le backend n'est joignable QUE par Nginx, pas directement depuis Internet
+# --proxy-headers : lit la vraie IP du visiteur transmise par Nginx (pour le limiteur de requetes)
+ExecStart=__DOSSIER__/backend/venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000 --workers 1 --proxy-headers --forwarded-allow-ips 127.0.0.1
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

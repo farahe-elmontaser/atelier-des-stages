@@ -9,8 +9,26 @@ async function requete(chemin, options = {}) {
     ...options,
   });
   const data = await r.json().catch(() => ({}));
-  if (!r.ok) throw new Error(data.detail || "Erreur du serveur");
+  if (!r.ok) {
+    // FastAPI renvoie soit un texte, soit une liste d'erreurs de validation (422)
+    const msg = typeof data.detail === "string" ? data.detail : "Données invalides.";
+    throw new Error(msg);
+  }
   return data;
+}
+
+// Identifiant ANONYME de la visite (web usage mining) : aleatoire, garde le temps de l'onglet.
+function sessionId() {
+  try {
+    let id = sessionStorage.getItem("session");
+    if (!id) {
+      id = Math.random().toString(36).slice(2) + Date.now().toString(36);
+      sessionStorage.setItem("session", id);
+    }
+    return id;
+  } catch {
+    return "anonyme";
+  }
 }
 
 export const api = {
@@ -23,6 +41,16 @@ export const api = {
   },
   stats: () => requete("/stats"),
   inscription: (data) => requete("/inscription", { method: "POST", body: JSON.stringify(data) }),
-  desinscription: (email) => requete("/desinscription/" + encodeURIComponent(email), { method: "DELETE" }),
   actualiser: () => requete("/refresh", { method: "POST" }),
+  usage: () => requete("/usage"),
+
+  // Web usage mining : on enregistre une action du visiteur (sans bloquer le site si ca echoue)
+  suivre: (type, infos = {}) => {
+    fetch(BASE + "/evenements", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ type, session: sessionId(), ...infos }),
+      keepalive: true,
+    }).catch(() => {});
+  },
 };

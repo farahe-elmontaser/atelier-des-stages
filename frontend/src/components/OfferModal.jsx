@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function OfferModal({ offre, onFermer }) {
+export default function OfferModal({ offre, onFermer, onClicOrigine }) {
   // Fermer avec la touche Echap
   useEffect(() => {
     const f = (e) => e.key === "Escape" && onFermer();
@@ -33,10 +33,15 @@ export default function OfferModal({ offre, onFermer }) {
           {offre.date_publication && <div><dt>Publiée le</dt><dd>{offre.date_publication.slice(0, 10)}</dd></div>}
         </dl>
 
-        {offre.lien && (
-          <a href={offre.lien} target="_blank" rel="noreferrer" className="bouton">
+        {/^https?:\/\//.test(offre.lien || "") ? (
+          <a href={offre.lien} target="_blank" rel="noreferrer" className="bouton" onClick={onClicOrigine}>
             Voir l'offre d'origine
           </a>
+        ) : (
+          <p className="note-demo">
+            Offre fictive du mode démo : elle n'a pas de page d'origine.
+            Les offres des vraies sources (scraping, Adzuna, France Travail, Job Bank) ont un lien.
+          </p>
         )}
       </div>
     </div>

@@ -5,11 +5,11 @@ du 3e passage, une offre "disparait" : parfait pour montrer la detection des nou
 et des offres supprimees pendant la soutenance.
 """
 import json
-from ..config import BASE_DIR
+from ..config import BASE_DIR, STOCKAGE_DIR
 from ..models import Offer
 
 FICHIER = BASE_DIR / "data" / "demo_offres.json"
-COMPTEUR = BASE_DIR / "data" / ".demo_passage"
+COMPTEUR = STOCKAGE_DIR / ".demo_passage"
 
 
 def source_demo():

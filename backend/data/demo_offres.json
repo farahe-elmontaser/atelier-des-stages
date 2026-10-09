@@ -4,7 +4,7 @@
     "entreprise": "Atlas Analytics",
     "ville": "Casablanca",
     "description": "Analyse des données de ventes avec Python, SQL et Power BI. Création de tableaux de bord pour l'équipe commerciale. Durée 4 mois, gratification.",
-    "lien": "https://example.com/offres/1",
+    "lien": "",
     "source": "Démo · France Travail",
     "date": "2026-10-01"
   },
@@ -13,7 +13,7 @@
     "entreprise": "Nova Digital",
     "ville": "Rabat",
     "description": "Développement d'interfaces web en React et TypeScript, intégration d'API REST. Stage PFE de 6 mois.",
-    "lien": "https://example.com/offres/2",
+    "lien": "",
     "source": "Démo · Adzuna (fr)",
     "date": "2026-10-02"
   },
@@ -22,7 +22,7 @@
     "entreprise": "Cedar Robotics",
     "ville": "Montréal, QC",
     "description": "Entraînement de modèles PyTorch pour la détection d'objets sur des images industrielles. Stage de 4 mois.",
-    "lien": "https://example.com/offres/3",
+    "lien": "",
     "source": "Démo · Job Bank",
     "date": "2026-10-03"
   },
@@ -31,7 +31,7 @@
     "entreprise": "Atlas Analytics",
     "ville": "Casablanca",
     "description": "Analyse des données de ventes avec Python, SQL et Power BI. Création de tableaux de bord pour l'équipe commerciale. Durée 4 mois, gratification.",
-    "lien": "https://example.com/offres/1-bis",
+    "lien": "",
     "source": "Démo · Adzuna (fr)",
     "date": "2026-10-01"
   },
@@ -40,7 +40,7 @@
     "entreprise": "Maison Lumière",
     "ville": "Paris",
     "description": "Gestion des réseaux sociaux, SEO et campagnes d'e-mailing. Stage de 6 mois, gratification légale.",
-    "lien": "https://example.com/offres/4",
+    "lien": "",
     "source": "Démo · Adzuna (ca)",
     "date": "2026-10-04"
   },
@@ -49,7 +49,7 @@
     "entreprise": "Bastion Sécurité",
     "ville": "Lyon",
     "description": "Surveillance des alertes de sécurité, analyse des journaux, participation aux tests d'intrusion.",
-    "lien": "https://example.com/offres/5",
+    "lien": "",
     "source": "Démo · France Travail",
     "date": "2026-10-05"
   },
@@ -58,7 +58,7 @@
     "entreprise": "Flux Data",
     "ville": "Toronto, ON",
     "description": "Construction de pipelines ETL avec Spark et Airflow, entrepôt de données sur le cloud.",
-    "lien": "https://example.com/offres/6",
+    "lien": "",
     "source": "Démo · Adzuna (fr)",
     "date": "2026-10-06"
   },
@@ -67,7 +67,7 @@
     "entreprise": "Souk App",
     "ville": "Marrakech",
     "description": "Développement d'une application mobile Flutter pour Android et iOS. Stage de 3 mois.",
-    "lien": "https://example.com/offres/7",
+    "lien": "",
     "source": "Démo · Job Bank",
     "date": "2026-10-07"
   },
@@ -76,7 +76,7 @@
     "entreprise": "Groupe Méridien",
     "ville": "Casablanca",
     "description": "Suivi budgétaire, reporting mensuel, analyse des écarts. Maîtrise d'Excel exigée.",
-    "lien": "https://example.com/offres/8",
+    "lien": "",
     "source": "Démo · Adzuna (ca)",
     "date": "2026-10-08"
   },
@@ -85,7 +85,7 @@
     "entreprise": "Orion Labs",
     "ville": "Paris",
     "description": "Conception d'un assistant basé sur des LLM, RAG et évaluation de modèles. Python obligatoire.",
-    "lien": "https://example.com/offres/9",
+    "lien": "",
     "source": "Démo · France Travail",
     "date": "2026-10-09"
   },
@@ -94,7 +94,7 @@
     "entreprise": "Kasbah Retail",
     "ville": "Tanger",
     "description": "Modélisation de données et tableaux de bord Power BI pour la direction. Stage de 4 mois.",
-    "lien": "https://example.com/offres/10",
+    "lien": "",
     "source": "Démo · Adzuna (fr)",
     "date": "2026-10-01"
   },
@@ -103,7 +103,7 @@
     "entreprise": "Nuage Tech",
     "ville": "Lille",
     "description": "Automatisation CI/CD, conteneurs Docker et Kubernetes sur Azure.",
-    "lien": "https://example.com/offres/11",
+    "lien": "",
     "source": "Démo · Job Bank",
     "date": "2026-10-02"
   },
@@ -112,7 +112,7 @@
     "entreprise": "Talentia Conseil",
     "ville": "Rabat",
     "description": "Sourcing de candidats, organisation des entretiens et suivi de l'onboarding.",
-    "lien": "https://example.com/offres/12",
+    "lien": "",
     "source": "Démo · Adzuna (ca)",
     "date": "2026-10-03"
   },
@@ -121,7 +121,7 @@
     "entreprise": "Atlas Motors",
     "ville": "Kénitra",
     "description": "Amélioration continue sur une ligne de production automobile, méthodes Lean et 5S.",
-    "lien": "https://example.com/offres/13",
+    "lien": "",
     "source": "Démo · France Travail",
     "date": "2026-10-04"
   },
@@ -130,7 +130,7 @@
     "entreprise": "Boréal Énergie",
     "ville": "Québec, QC",
     "description": "Modèles de prévision de la consommation électrique avec scikit-learn et séries temporelles.",
-    "lien": "https://example.com/offres/14",
+    "lien": "",
     "source": "Démo · Adzuna (fr)",
     "date": "2026-10-05"
   },
@@ -139,7 +139,7 @@
     "entreprise": "Pixel Forge",
     "ville": "Bordeaux",
     "description": "Développement d'API avec FastAPI et PostgreSQL, tests automatisés.",
-    "lien": "https://example.com/offres/15",
+    "lien": "",
     "source": "Démo · Job Bank",
     "date": "2026-10-06"
   },
@@ -148,7 +148,7 @@
     "entreprise": "Maroc Connect",
     "ville": "Casablanca",
     "description": "Configuration d'équipements Cisco, supervision du réseau, documentation technique.",
-    "lien": "https://example.com/offres/16",
+    "lien": "",
     "source": "Démo · Adzuna (ca)",
     "date": "2026-10-07"
   },
@@ -157,7 +157,7 @@
     "entreprise": "Sahara Solutions",
     "ville": "Agadir",
     "description": "Prospection de clients professionnels, préparation d'offres commerciales, suivi CRM.",
-    "lien": "https://example.com/offres/17",
+    "lien": "",
     "source": "Démo · France Travail",
     "date": "2026-10-08"
   },
@@ -166,7 +166,7 @@
     "entreprise": "Lumen Media",
     "ville": "Montréal, QC",
     "description": "Analyse du comportement des clients, segmentation et tests A/B avec SQL et Python.",
-    "lien": "https://example.com/offres/18",
+    "lien": "",
     "source": "Démo · Adzuna (fr)",
     "date": "2026-10-09"
   },
@@ -175,7 +175,7 @@
     "entreprise": "Volta Systems",
     "ville": "Grenoble",
     "description": "Programmation de microcontrôleurs en C, tests de cartes électroniques.",
-    "lien": "https://example.com/offres/19",
+    "lien": "",
     "source": "Démo · Job Bank",
     "date": "2026-10-01"
   },
@@ -184,7 +184,7 @@
     "entreprise": "Cabinet Andalous",
     "ville": "Fès",
     "description": "Participation aux missions d'audit financier, revue des états financiers.",
-    "lien": "https://example.com/offres/20",
+    "lien": "",
     "source": "Démo · Adzuna (ca)",
     "date": "2026-10-02"
   },
@@ -193,7 +193,7 @@
     "entreprise": "Médina Labs",
     "ville": "Rabat",
     "description": "Application web full stack avec React et Node.js, base de données MongoDB.",
-    "lien": "https://example.com/offres/21",
+    "lien": "",
     "source": "Démo · France Travail",
     "date": "2026-10-03"
   },
@@ -202,7 +202,7 @@
     "entreprise": "Arganier AI",
     "ville": "Casablanca",
     "description": "Classification de textes en arabe et en français avec des modèles Transformers.",
-    "lien": "https://example.com/offres/22",
+    "lien": "",
     "source": "Démo · Adzuna (fr)",
     "date": "2026-10-04"
   },
@@ -211,7 +211,7 @@
     "entreprise": "BTP Horizon",
     "ville": "Marrakech",
     "description": "Suivi des travaux, métrés et coordination avec les sous-traitants sur un chantier de bâtiment.",
-    "lien": "https://example.com/offres/23",
+    "lien": "",
     "source": "Démo · Job Bank",
     "date": "2026-10-05"
   },
@@ -220,7 +220,7 @@
     "entreprise": "Studio Safran",
     "ville": "Paris",
     "description": "Organisation d'événements, rédaction de contenus et relations presse.",
-    "lien": "https://example.com/offres/24",
+    "lien": "",
     "source": "Démo · Adzuna (ca)",
     "date": "2026-10-06"
   },
@@ -229,7 +229,7 @@
     "entreprise": "Océan Logistique",
     "ville": "Tanger",
     "description": "Mise en place d'un data lake et d'un pipeline de données pour la supply chain.",
-    "lien": "https://example.com/offres/25",
+    "lien": "",
     "source": "Démo · France Travail",
     "date": "2026-10-07"
   },
@@ -238,7 +238,7 @@
     "entreprise": "Aéro Atlas",
     "ville": "Casablanca",
     "description": "Conception de pièces sous CATIA et SolidWorks pour l'aéronautique.",
-    "lien": "https://example.com/offres/26",
+    "lien": "",
     "source": "Démo · Adzuna (fr)",
     "date": "2026-10-08"
   }

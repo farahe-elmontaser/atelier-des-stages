@@ -11,7 +11,9 @@ def _bool(nom, defaut="false"):
     return os.getenv(nom, defaut).strip().lower() in ("1", "true", "yes", "oui")
 
 
-DB_PATH = BASE_DIR / "data" / "offres.db"
+# Dossier ou l'application ecrit (base de donnees). Dans Docker : un volume.
+STOCKAGE_DIR = Path(os.getenv("STOCKAGE_DIR", str(BASE_DIR / "data")))
+DB_PATH = STOCKAGE_DIR / "offres.db"
 
 DEMO_MODE = _bool("DEMO_MODE", "true")
 INTERVALLE_MINUTES = int(os.getenv("INTERVALLE_MINUTES", "60"))
@@ -33,6 +35,11 @@ SCRAPING_MAX_OFFRES = int(os.getenv("SCRAPING_MAX_OFFRES", "20"))
 SCRAPING_PAUSE = float(os.getenv("SCRAPING_PAUSE", "1"))
 
 JOB_BANK_CSV = BASE_DIR / os.getenv("JOB_BANK_CSV", "data/job_bank.csv")
+
+# Securite
+ADMIN_TOKEN = os.getenv("ADMIN_TOKEN", "")            # pour /api/refresh depuis une autre machine
+CORS_ORIGINS = [o.strip() for o in os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(",") if o.strip()]
+URL_PUBLIQUE = os.getenv("URL_PUBLIQUE", "http://localhost:8000")   # pour le lien de desinscription
 
 SMTP_HOST = os.getenv("SMTP_HOST", "smtp.gmail.com")
 SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))

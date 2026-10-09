@@ -15,6 +15,7 @@ export default function Subscribe({ profils }) {
     try {
       const r = await api.inscription(form);
       setEtat({ type: "succes", message: r.message });
+      api.suivre("inscription", { profil: form.profil });
       setForm({ nom: "", email: "", profil: "" });
     } catch (err) {
       setEtat({ type: "erreur", message: err.message });

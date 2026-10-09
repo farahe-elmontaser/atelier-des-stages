@@ -3,7 +3,7 @@ function formatDate(iso) {
   return new Date(iso).toLocaleString("fr-FR", { day: "2-digit", month: "long", hour: "2-digit", minute: "2-digit" });
 }
 
-export default function Chiffres({ stats, onActualiser, actualisation }) {
+export default function Chiffres({ stats, onActualiser, actualisation, message }) {
   const p = stats?.dernier_passage;
   return (
     <section id="chiffres" className="chiffres">
@@ -28,6 +28,7 @@ export default function Chiffres({ stats, onActualiser, actualisation }) {
         <button className="lien" onClick={onActualiser} disabled={actualisation}>
           {actualisation ? "Vérification…" : "Vérifier maintenant"}
         </button>
+        {message && <small className="chiffre-message">{message}</small>}
       </div>
     </section>
   );

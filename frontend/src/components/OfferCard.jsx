@@ -11,7 +11,7 @@ export default function OfferCard({ offre, onOuvrir }) {
       {offre.resume && <p className="carte-resume">{offre.resume}</p>}
       <div className="carte-pied">
         <span className="carte-source">{offre.source}</span>
-        <span className="carte-lien">Découvrir</span>
+        <span className="carte-lien">{offre.source?.startsWith("Démo") ? "Démo" : "Découvrir"}</span>
       </div>
     </article>
   );

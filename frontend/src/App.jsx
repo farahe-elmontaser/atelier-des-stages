@@ -7,7 +7,10 @@ import ProfilTabs from "./components/ProfilTabs";
 import OfferCard from "./components/OfferCard";
 import OfferModal from "./components/OfferModal";
 import Subscribe from "./components/Subscribe";
+import Tendances from "./components/Tendances";
 import Footer from "./components/Footer";
+
+let visiteEnregistree = false;   // evite de compter 2 fois la visite (React StrictMode en developpement)
 
 export default function App() {
   const [profils, setProfils] = useState([]);
@@ -19,12 +22,34 @@ export default function App() {
   const [erreur, setErreur] = useState("");
   const [selection, setSelection] = useState(null);  // offre ouverte dans la fenetre
   const [actualisation, setActualisation] = useState(false);
+  const [messageRefresh, setMessageRefresh] = useState("");
+  const [usage, setUsage] = useState(null);
 
   // Au demarrage : profils + statistiques
   useEffect(() => {
     api.profils().then(setProfils).catch(() => {});
     api.stats().then(setStats).catch(() => {});
+    api.usage().then(setUsage).catch(() => {});
+    if (!visiteEnregistree) {                               // web usage mining
+      visiteEnregistree = true;
+      api.suivre("visite");
+    }
   }, []);
+
+  // Web usage mining : on note le profil choisi et les recherches (apres la frappe)
+  useEffect(() => {
+    if (profil) api.suivre("filtre_profil", { profil });
+  }, [profil]);
+  useEffect(() => {
+    if (recherche.trim().length < 3) return;
+    const t = setTimeout(() => api.suivre("recherche", { recherche: recherche.trim() }), 1200);
+    return () => clearTimeout(t);
+  }, [recherche]);
+
+  function ouvrirOffre(o) {
+    setSelection(o);
+    api.suivre("vue_offre", { offre_id: o.id });
+  }
 
   // A chaque changement de profil ou de recherche : on recharge les offres
   useEffect(() => {
@@ -41,11 +66,14 @@ export default function App() {
 
   async function actualiser() {
     setActualisation(true);
+    setMessageRefresh("");
     try {
       await api.actualiser();
       const [o, s] = await Promise.all([api.offres({ profil, q: recherche }), api.stats()]);
       setOffres(o);
       setStats(s);
+    } catch (e) {
+      setMessageRefresh(e.message);   // ex. "patientez 30 secondes"
     } finally {
       setActualisation(false);
     }
@@ -56,7 +84,7 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <Chiffres stats={stats} onActualiser={actualiser} actualisation={actualisation} />
+        <Chiffres stats={stats} onActualiser={actualiser} actualisation={actualisation} message={messageRefresh} />
 
         <section id="offres" className="section">
           <div className="section-titre">
@@ -85,7 +113,7 @@ export default function App() {
 
           <div className="grille">
             {offres.map((o) => (
-              <OfferCard key={o.id} offre={o} onOuvrir={() => setSelection(o)} />
+              <OfferCard key={o.id} offre={o} onOuvrir={() => ouvrirOffre(o)} />
             ))}
           </div>
 
@@ -94,11 +122,22 @@ export default function App() {
           )}
         </section>
 
+        <Tendances usage={usage} onOuvrir={(id) => {
+          const o = offres.find((x) => x.id === id);
+          if (o) ouvrirOffre(o);
+        }} />
+
         <Subscribe profils={profils} />
       </main>
       <Footer />
 
-      {selection && <OfferModal offre={selection} onFermer={() => setSelection(null)} />}
+      {selection && (
+        <OfferModal
+          offre={selection}
+          onFermer={() => setSelection(null)}
+          onClicOrigine={() => api.suivre("clic_origine", { offre_id: selection.id })}
+        />
+      )}
     </>
   );
 }

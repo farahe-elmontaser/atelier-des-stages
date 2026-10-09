@@ -1,0 +1,45 @@
+# Lance toute l'application avec UNE commande :   docker compose up --build
+# Puis ouvrez http://localhost:8080
+#
+# Ollama : par defaut, on utilise l'Ollama deja installe sur votre PC (plus rapide, utilise votre GPU).
+# Pour lancer Ollama DANS Docker a la place (Windows PowerShell) :
+#   $env:OLLAMA_URL="http://ollama:11434"; docker compose --profile ollama up --build
+#   puis une fois :  docker compose exec ollama ollama pull llama3.2
+
+services:
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    env_file:
+      - path: ./backend/.env
+        required: false          # sans .env : mode demo, e-mails simules
+    environment:
+      STOCKAGE_DIR: /app/stockage
+      OLLAMA_URL: ${OLLAMA_URL:-http://host.docker.internal:11434}
+      URL_PUBLIQUE: ${URL_PUBLIQUE:-http://localhost:8080}
+      CORS_ORIGINS: http://localhost:8080
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # permet de joindre l'Ollama de votre PC
+    volumes:
+      - donnees:/app/stockage                  # la base SQLite survit aux redemarrages
+      - ./backend/data:/app/data:ro            # offres de demo + votre job_bank.csv (lecture seule)
+    # pas de "ports" : le backend n'est joignable QUE par le conteneur frontend
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    ports:
+      - "8080:80"                              # http://localhost:8080
+    depends_on:
+      - backend
+
+  ollama:
+    image: ollama/ollama
+    profiles: ["ollama"]                       # ne demarre que si on le demande
+    restart: unless-stopped
+    volumes:
+      - modeles_ollama:/root/.ollama
+
+volumes:
+  donnees:
+  modeles_ollama:
