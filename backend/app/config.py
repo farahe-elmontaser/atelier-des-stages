@@ -15,7 +15,7 @@ def _bool(nom, defaut="false"):
 STOCKAGE_DIR = Path(os.getenv("STOCKAGE_DIR", str(BASE_DIR / "data")))
 DB_PATH = STOCKAGE_DIR / "offres.db"
 
-DEMO_MODE = _bool("DEMO_MODE", "true")
+DEMO_MODE = _bool("DEMO_MODE", "false")
 INTERVALLE_MINUTES = int(os.getenv("INTERVALLE_MINUTES", "60"))
 
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
@@ -30,9 +30,21 @@ FRANCE_TRAVAIL_CLIENT_ID = os.getenv("FRANCE_TRAVAIL_CLIENT_ID", "")
 FRANCE_TRAVAIL_CLIENT_SECRET = os.getenv("FRANCE_TRAVAIL_CLIENT_SECRET", "")
 FRANCE_TRAVAIL_MOTS_CLES = os.getenv("FRANCE_TRAVAIL_MOTS_CLES", "stage")
 
-SCRAPING_ACTIF = _bool("SCRAPING_ACTIF", "true")
+SCRAPING_ACTIF = _bool("SCRAPING_ACTIF", "false")   # site d'entrainement Fake Jobs (offres fictives)
 SCRAPING_MAX_OFFRES = int(os.getenv("SCRAPING_MAX_OFFRES", "20"))
 SCRAPING_PAUSE = float(os.getenv("SCRAPING_PAUSE", "1"))
+
+# --- Vraies offres : API publiques sans cle (voir app/sources/offres_reelles.py) ---
+def _liste(nom, defaut):
+    return [x.strip() for x in os.getenv(nom, defaut).split(",") if x.strip()]
+
+GREENHOUSE_ENTREPRISES = _liste("GREENHOUSE_ENTREPRISES",
+    "stripe,airbnb,databricks,cloudflare,datadog,gitlab,figma,discord,robinhood,coinbase")
+LEVER_ENTREPRISES = _liste("LEVER_ENTREPRISES", "spotify,palantir")
+MUSE_PAGES = int(os.getenv("MUSE_PAGES", "0"))
+ARBEITNOW_PAGES = int(os.getenv("ARBEITNOW_PAGES", "3"))
+REMOTIVE_ACTIF = _bool("REMOTIVE_ACTIF", "true")
+MAX_PAR_SOURCE = int(os.getenv("MAX_PAR_SOURCE", "60"))
 
 JOB_BANK_CSV = BASE_DIR / os.getenv("JOB_BANK_CSV", "data/job_bank.csv")
 

@@ -19,6 +19,7 @@ from .sources import toutes_les_offres
 from .llm import analyser_offre
 from .matching import PROFILS
 from .notifier import envoyer_email
+from .config import DEMO_MODE, SCRAPING_ACTIF
 
 _verrou = threading.Lock()
 dernier_passage = {"date": None, "nouvelles": 0, "supprimees": 0, "emails": 0, "total_collecte": 0}
@@ -40,6 +41,13 @@ def verifier_offres():
     try:
         print(f"\n=== Verification des offres : {datetime.now():%Y-%m-%d %H:%M:%S} ===")
         db = connexion()
+
+        # Offres fictives desactivees dans .env -> on les retire du site
+        if not DEMO_MODE:
+            db.execute("UPDATE offres SET active = 0 WHERE source LIKE 'Démo%'")
+        if not SCRAPING_ACTIF:
+            db.execute("UPDATE offres SET active = 0 WHERE source = 'Scraping · Fake Jobs'")
+        db.commit()
 
         # 1 + 2. Collecte et centralisation (la PHOTO des sources)
         offres_site = toutes_les_offres()

@@ -40,7 +40,6 @@ export default function OfferModal({ offre, onFermer, onClicOrigine }) {
         ) : (
           <p className="note-demo">
             Offre fictive du mode démo : elle n'a pas de page d'origine.
-            Les offres des vraies sources (scraping, Adzuna, France Travail, Job Bank) ont un lien.
           </p>
         )}
       </div>

@@ -6,3 +6,6 @@ __pycache__/
 backend/data/offres.db
 backend/data/.demo_passage
 backend/data/job_bank.csv
+
+# Sauvegardes du .env (contiennent des secrets)
+*.sauvegarde

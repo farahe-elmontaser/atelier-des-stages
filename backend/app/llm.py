@@ -80,6 +80,8 @@ def analyser_offre(titre, entreprise, description):
         categorie = infos.get("categorie", "Autre")
         if categorie not in CATEGORIES:       # securite : le LLM peut inventer
             categorie = classer_par_mots_cles(titre, description)
+        elif categorie == "Autre":            # le LLM hesite : le titre donne peut-etre la reponse
+            categorie = classer_par_mots_cles(titre, "")
         competences = [str(c) for c in infos.get("competences", [])][:3]
         return {"categorie": categorie, "competences": competences,
                 "resume": str(infos.get("resume", ""))[:300], "methode": "llm"}
