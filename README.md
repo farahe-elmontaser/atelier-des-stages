@@ -1,7 +1,39 @@
 # L'Atelier des Stages
 
-Application web qui collecte des offres de stage depuis plusieurs sources, détecte les nouvelles,
-les classe avec un LLM (Ollama) et les envoie par e-mail aux abonnés selon leur profil.
+> Projet du module **Web Mining** : une application web qui collecte des offres de stage depuis plusieurs sources, détecte les nouvelles, les classe avec un LLM (Ollama) et les envoie par e-mail aux abonnés selon leur profil.
+
+![Aperçu de l'application](docs/apercu.png)
+
+**Technologies :** Python · FastAPI · requests · BeautifulSoup · SQLite · APScheduler · Ollama (LLM) · React · Vite
+
+**Auteurs :** Votre Nom, Nom du binôme
+
+## Le pipeline
+
+```mermaid
+flowchart LR
+    A[Scheduler<br/>toutes les heures] --> B[Collecte]
+    B --> B1[Web scraping<br/>requests + BeautifulSoup]
+    B --> B2[API Adzuna]
+    B --> B3[API France Travail]
+    B --> B4[CSV Job Bank]
+    B1 & B2 & B3 & B4 --> C[Centralisation<br/>classe Offer]
+    C --> D[Suppression<br/>des doublons]
+    D --> E{Déjà dans<br/>la base ?}
+    E -- Oui --> F[Rien]
+    E -- Non --> G[LLM Ollama<br/>catégorie]
+    G --> H[(SQLite)]
+    H --> I[Matching<br/>profil]
+    I --> J[E-mail<br/>aux abonnés]
+```
+
+## Lien avec le cours
+
+| Notion du cours | Dans le projet |
+|---|---|
+| **Web content mining** | Extraction du titre, de l'entreprise, de la ville et de la description ; classification par le LLM |
+| **Web structure mining** | Le scraper suit le lien de chaque offre vers sa page détail |
+| **Web scraping** | `requests` + `BeautifulSoup` (`find`, `find_all`), respect de `robots.txt` |
 
 ```
 stage-alert/
