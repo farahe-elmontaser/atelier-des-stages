@@ -2,7 +2,7 @@
 
 > Projet du module **Web Mining** : une application web qui collecte des offres de stage depuis plusieurs sources, détecte les nouvelles, les classe avec un LLM (Ollama) et les envoie par e-mail aux abonnés selon leur profil.
 
-![Aperçu de l'application](docs/apercu.png)
+![Aperçu de l'application](docs/apercu.png) 
 
 **Technologies :** Python · FastAPI · requests · BeautifulSoup · SQLite · APScheduler · Ollama (LLM) · React · Vite
 
